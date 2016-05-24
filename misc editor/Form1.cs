@@ -1577,21 +1577,42 @@ namespace A_Gen_Misc_Edits
             long TextO = 0x05496C;
             long TextO2 = 0x05496D;
             long BTNModeO = 0x0549A2;
+            long BTNModeO2 = 0x0549A3;
             byte[] TwentyB = { 0x20 };
 
+            byte[] Fix1 = { 0x10, 0x75 };
+            long Fix1O = 0x5496e;
+            byte[] Fix2 = { 0x50, 0x75 };
+            long Fix2O = 0x05499E;
+            byte[] Fix3 = { 0xC8, 0x74 };
+            long Fix3O = 0x0549A4;
+
             //Text Section
-            byte[] TextByte = BitConverter.GetBytes(TextSpeed.SelectedIndex + Frame.SelectedIndex * 8);
+            int Text1 = TextSpeed.SelectedIndex;
+            int Text2 = Frame.SelectedIndex * 8;
+            int Text3 = (Text1 + Text2);
+            byte[] TextByte = BitConverter.GetBytes(Text3);
             WriteData(TextByte, TextO);
             WriteData(TwentyB, TextO2);
 
             //Battle Section
-            byte[] BattleB = BitConverter.GetBytes(Sound.SelectedIndex + BattleStyle.SelectedIndex * 2 + BattleScene.SelectedIndex * 4);
+            int Battle1 = Sound.SelectedIndex;
+            int Battle2 = BattleStyle.SelectedIndex * 2;
+            int Battle3 = BattleScene.SelectedIndex * 4;
+            int Battle4 = (Battle1 + Battle2 + Battle3);
+            byte[] BattleB = BitConverter.GetBytes(Battle4);
             WriteData(BattleB, BattleO);
             WriteData(TwentyB, BattleO2);
 
             //Button
             byte[] ButtonB = BitConverter.GetBytes(BTNMode.SelectedIndex);
             WriteData(ButtonB, BTNModeO);
+            WriteData(TwentyB, BTNModeO2);
+
+            //Fix
+            WriteData(Fix1, Fix1O);
+            WriteData(Fix2, Fix2O);
+            WriteData(Fix3, Fix3O);
         }
 
         public static byte[] Combine(byte[] first, byte[] second)

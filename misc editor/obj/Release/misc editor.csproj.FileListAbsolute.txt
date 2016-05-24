@@ -6,3 +6,4 @@ C:\Users\Joexv\Downloads\Compressed\Hex-Helper-master\misc editor\obj\Release\He
 C:\Users\Joexv\Downloads\Compressed\Hex-Helper-master\misc editor\obj\Release\misc editor.csproj.GenerateResource.Cache
 C:\Users\Joexv\Downloads\Compressed\Hex-Helper-master\misc editor\obj\Release\AGenMiscEditor.exe
 C:\Users\Joexv\Downloads\Compressed\Hex-Helper-master\misc editor\obj\Release\AGenMiscEditor.pdb
+C:\Users\Joexv\Downloads\Compressed\Hex-Helper-master\misc editor\obj\Release\misc editor.csprojResolveAssemblyReference.cache
