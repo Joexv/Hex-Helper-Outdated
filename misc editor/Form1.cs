@@ -177,8 +177,8 @@ namespace A_Gen_Misc_Edits
                         other = true;
                         break;
                 }
-                groupBox2.Enabled = true;
-                groupBox3.Enabled = false;
+                tabControl1.Enabled = true;
+                tabPage3.Enabled = false;
                 if (other == true)
                 {
                     DialogResult result = MessageBox.Show("This game cannot be identified. If this is a ROM with a custom ID but with the normal english offsets then procede with caution. If it is not, it may cause irreversible damage. Do you wish to continue?", "Warning", MessageBoxButtons.YesNo);
@@ -191,16 +191,19 @@ namespace A_Gen_Misc_Edits
                 {
                     label2.Text = "Fire Red MrDS";
                     fileLocation = ofd.FileName;
+                    tabPage3.Enabled = true;
                 }
                 if (FireRed == true)
                 {
                     label2.Text = "Fire Red BPRE";
                     fileLocation = ofd.FileName;
+                    tabPage3.Enabled = true;
                 }
                 if (LeafGreen == true)
                 {
                     label2.Text = "Leaf Green BPGE";
                     fileLocation = ofd.FileName;
+                    tabPage3.Enabled = true;
                 }
                 if (other == true)
                 {
@@ -222,11 +225,17 @@ namespace A_Gen_Misc_Edits
                     label2.Text = "sapphire AXPE";
                     fileLocation = ofd.FileName;
                 }
+                TextSpeed.SelectedIndex = 1;
+                Frame.SelectedIndex = 0;
+                Sound.SelectedIndex = 1;
+                BattleScene.SelectedIndex = 0;
+                BattleStyle.SelectedIndex = 0;
+                BTNMode.SelectedIndex = 0;
                 br.Close();
             }
         }
 
-        private void Flash_Click(object sender, EventArgs e) //Apply button
+        private void Flash_Click_1(object sender, EventArgs e) //Apply button
         {
             if (fileLocation == null)
             {
@@ -304,7 +313,7 @@ namespace A_Gen_Misc_Edits
             }
         }
 
-        private void Running_Click(object sender, EventArgs e) //Running button
+        private void Running_Click_1(object sender, EventArgs e) //Running button
         { }
 
         private void WriteData(byte[] BytesToWrite, long Offset)
@@ -315,8 +324,16 @@ namespace A_Gen_Misc_Edits
             bw.Close();
         }
 
+        private void WriteByte(byte[] ByteToWrite, long Offset)
+        {
+            BinaryWriter bw = new BinaryWriter(File.OpenWrite(fileLocation));
+            bw.BaseStream.Seek(Offset, SeekOrigin.Begin);
+            bw.Write(ByteToWrite);
+            bw.Close();
+        }
 
-        private void Running_Click_1(object sender, EventArgs e)
+
+        private void Running_Click_2(object sender, EventArgs e)
         {
             if (fileLocation == null)
             {
@@ -433,7 +450,7 @@ namespace A_Gen_Misc_Edits
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click_1(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("This hack is for FireRed v1 only, and uses the freespace for around 0x80 bytes. If you have used this space it will overwrite it and delete your data which could result in corruption or a bad script. Click yes if you understand the risks.", "Notice", MessageBoxButtons.YesNo);
             if (result == System.Windows.Forms.DialogResult.Yes)
@@ -672,7 +689,7 @@ namespace A_Gen_Misc_Edits
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void button3_Click_1(object sender, EventArgs e)
         {
             if (FireRed == true)
             {
@@ -722,7 +739,7 @@ namespace A_Gen_Misc_Edits
             }
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void button4_Click_1(object sender, EventArgs e)
         {
             if (Emerald == true)
             {
@@ -790,13 +807,13 @@ namespace A_Gen_Misc_Edits
                             }
                         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button2_Click_1(object sender, EventArgs e)
         {
-            MessageBox.Show("Credits go to Darthatron, Diegoisawesome, Knizz, Mewthree, Jambo51, Phenom2122 and Team Fail. ");
+            MessageBox.Show("Credits go to Darthatron, Diegoisawesome, Knizz, Mewthree, Jambo51, Phenom2122, Spherical Ice, TheRealOCD, Team Fail, and anyone I may have forgotten to credit! ");
         }
 
 
-        private void button6_Click(object sender, EventArgs e)
+        private void button6_Click_1(object sender, EventArgs e)
         {
             if (fileLocation == null)
             {
@@ -879,7 +896,7 @@ namespace A_Gen_Misc_Edits
             }
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void button5_Click_1(object sender, EventArgs e)
         {
             if (fileLocation == null)
             {
@@ -932,7 +949,7 @@ namespace A_Gen_Misc_Edits
             }
         }
 
-        private void button8_Click(object sender, EventArgs e)
+        private void button8_Click_1(object sender, EventArgs e)
         {
             if (fileLocation == null)
             {
@@ -972,7 +989,7 @@ namespace A_Gen_Misc_Edits
             }
         }
 
-        private void button7_Click(object sender, EventArgs e)
+        private void button7_Click_1(object sender, EventArgs e)
         {
             if (fileLocation == null)
             {
@@ -1078,7 +1095,7 @@ namespace A_Gen_Misc_Edits
 
         }
 
-        private void EvoND_Click(object sender, EventArgs e)
+        private void EvoND_Click_1(object sender, EventArgs e)
         {
             if (fileLocation == null)
             {
@@ -1143,7 +1160,7 @@ namespace A_Gen_Misc_Edits
             }
         }
 
-        private void button9_Click(object sender, EventArgs e)
+        private void button9_Click_1(object sender, EventArgs e)
         {
             if (Emerald == true)
             {
@@ -1208,7 +1225,7 @@ namespace A_Gen_Misc_Edits
                         }
 
 
-        private void button10_Click(object sender, EventArgs e)
+        private void button10_Click_1(object sender, EventArgs e)
         {
             long Birch = 0x308AC;
             long Intro = 0x30872;
@@ -1251,15 +1268,116 @@ namespace A_Gen_Misc_Edits
                     }
                 }
 
-        private void button11_Click(object sender, EventArgs e)
+        private void button11_Click_1(object sender, EventArgs e)
         {
-            groupBox3.Location = new Point(12, 82);
-            groupBox2.Location = new Point(423, 82);
-            groupBox3.Enabled = true;
-            groupBox2.Enabled = false;
+
+            if (FireRed == true)
+            {
+                try
+                {
+                    MessageBox.Show("Shaming Lu-Ho....");
+                    long AMapFix = 0x39fbf8;
+                    byte[] AMapFixB = { 0xB5, 0xFF, 0x05, 0x08, };
+                    WriteData(AMapFixB, AMapFix);
+                    MessageBox.Show("Success!");
+                }
+                catch
+                {
+                    MessageBox.Show("Failed! Please make sure that there is no other program with your ROM opened.");//Put messages here if you want...
+                }
+                if (MrDS == true)
+                {
+                    try
+                    {
+                        MessageBox.Show("Shaming Lu-Ho....");
+                        long AMapFix = 0x39fbf8;
+                        byte[] AMapFixB = { 0xB5, 0xFF, 0x05, 0x08, };
+                        WriteData(AMapFixB, AMapFix);
+                        MessageBox.Show("Success!");
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Failed! Please make sure that there is no other program with your ROM opened.");//Put messages here if you want...
+                    }
+                }
+                if (other == true)
+                {
+                    DialogResult result1 = MessageBox.Show("This is an unrecognised game. Click Yes if the game is Fire Red-based, or No/Cancel if you wish to not continue.", "Notice", MessageBoxButtons.YesNoCancel);
+                    if (result1 == System.Windows.Forms.DialogResult.Yes)
+                    {
+                        try
+                        {
+                            MessageBox.Show("Shaming Lu-Ho....");
+                            long AMapFix = 0x39fbf8;
+                            byte[] AMapFixB = { 0xB5, 0xFF, 0x05, 0x08, };
+                            WriteData(AMapFixB, AMapFix);
+                            MessageBox.Show("Success!");
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Failed! Please make sure that there is no other program with your ROM opened.");//Put messages here if you want...
+                        }
+                    }
+                }
+            }
+
+        }
+        private void button12_Click_1(object sender, EventArgs e)
+        {
+
+            if (FireRed == true)
+            {
+                try
+                {
+                    MessageBox.Show("Shaming Lu-Ho....");
+                    long AMapFix = 0x39fbf8;
+                    byte[] AMapFixB = { 0xF1, 0x31, 0x06, 0x08 };
+                    WriteData(AMapFixB, AMapFix);
+                    MessageBox.Show("Success!");
+                }
+                catch
+                {
+                    MessageBox.Show("Failed! Please make sure that there is no other program with your ROM opened.");//Put messages here if you want...
+                }
+                if (MrDS == true)
+                {
+                    try
+                    {
+                        MessageBox.Show("Shaming Lu-Ho....");
+                        long AMapFix = 0x39fbf8;
+                        byte[] AMapFixB = { 0xF1, 0x31, 0x06, 0x08 };
+                        WriteData(AMapFixB, AMapFix);
+                        MessageBox.Show("Success!");
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Failed! Please make sure that there is no other program with your ROM opened.");//Put messages here if you want...
+                    }
+                }
+                if (other == true)
+                {
+                    DialogResult result1 = MessageBox.Show("This is an unrecognised game. Click Yes if the game is Fire Red-based, or No/Cancel if you wish to not continue.", "Notice", MessageBoxButtons.YesNoCancel);
+                    if (result1 == System.Windows.Forms.DialogResult.Yes)
+                    {
+                        try
+                        {
+                            MessageBox.Show("Shaming Lu-Ho....");
+                            long AMapFix = 0x39fbf8;
+                            byte[] AMapFixB = { 0xF1, 0x31, 0x06, 0x08 };
+                            WriteData(AMapFixB, AMapFix);
+                            MessageBox.Show("Success!");
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Failed! Please make sure that there is no other program with your ROM opened.");//Put messages here if you want...
+                        }
+                    }
+                }
+            }
+
         }
 
-        private void button13_Click(object sender, EventArgs e)
+        private void button13_Click_1(object sender, EventArgs e)
         {
             long Seen = 0x00CF56;
             long Seen1 = 0x00CF64;
@@ -1325,7 +1443,7 @@ namespace A_Gen_Misc_Edits
             }
         }
 
-        private void button14_Click(object sender, EventArgs e)
+        private void button14_Click_1(object sender, EventArgs e)
         {
             long RFlag = 0x05BA3A;
             byte[] RFlagB = { 0x00, 0x00, 0x00, 0x00 };
@@ -1379,12 +1497,146 @@ namespace A_Gen_Misc_Edits
             }
         }
 
+
+
+        private void button15_Click_1(object sender, EventArgs e)
+        {
+            long Poison = 0x06D7C3;
+            byte[] PoisonB = { 0xE0};
+            if (fileLocation == null)
+            {
+                MessageBox.Show("Please load a game.", "Error");
+                return;
+            }
+            if (FireRed == true)
+            {
+                try
+                {
+                    MessageBox.Show("Telling Poison to cut it out....");
+                    WriteData(PoisonB, Poison);  //stuff here for file writing
+                    MessageBox.Show("Success!");
+                }
+                catch
+                {
+                    MessageBox.Show("Failed! Please make sure that there is no other program with your ROM opened.");//Put messages here if you want...
+                }
+            }
+            if (MrDS == true)
+            {
+                try
+                {
+                    MessageBox.Show("Telling Poison to cut it out....");
+                    WriteData(PoisonB, Poison);  //stuff here for file writing
+                    MessageBox.Show("Success!");
+                }
+                catch
+                {
+                    MessageBox.Show("Failed! Please make sure that there is no other program with your ROM opened.");//Put messages here if you want...
+                }
+            }
+            if (other == true)
+            {
+                DialogResult result = MessageBox.Show("This is an unrecognised game. Click Yes if the game is Fire Red-based, or No if you wish to not continue.", "Notice", MessageBoxButtons.YesNo);
+                if (result == System.Windows.Forms.DialogResult.Yes)
+                {
+                    try
+                    {
+                        MessageBox.Show("Telling Poison to cut it out....");
+                        WriteData(PoisonB, Poison);  //stuff here for file writing
+                        MessageBox.Show("Success!");
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Failed! Please make sure that there is no other program with your ROM opened.");//Put messages here if you want...
+                    }
+                }
+            }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox5_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage3_Click(object sender, EventArgs e)
+        {
+
+
+        }
+
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            long BattleO = 0x05499C;
+            long BattleO2 = 0x05499D;
+            long TextO = 0x05496C;
+            long TextO2 = 0x05496D;
+            long BTNModeO = 0x0549A2;
+            byte[] TwentyB = { 0x20 };
+
+            //Text Section
+            byte[] TextByte = BitConverter.GetBytes(TextSpeed.SelectedIndex + Frame.SelectedIndex * 8);
+            WriteData(TextByte, TextO);
+            WriteData(TwentyB, TextO2);
+
+            //Battle Section
+            byte[] BattleB = BitConverter.GetBytes(Sound.SelectedIndex + BattleStyle.SelectedIndex * 2 + BattleScene.SelectedIndex * 4);
+            WriteData(BattleB, BattleO);
+            WriteData(TwentyB, BattleO2);
+
+            //Button
+            byte[] ButtonB = BitConverter.GetBytes(BTNMode.SelectedIndex);
+            WriteData(ButtonB, BTNModeO);
+        }
+
+        public static byte[] Combine(byte[] first, byte[] second)
+        {
+            byte[] ret = new byte[first.Length + second.Length];
+            Buffer.BlockCopy(first, 0, ret, 0, first.Length);
+            Buffer.BlockCopy(second, 0, ret, first.Length, second.Length);
+            return ret;
+        }
+
+        public static byte[] Combine(byte[] first, byte[] second, byte[] third)
+        {
+            byte[] ret = new byte[first.Length + second.Length + third.Length];
+            Buffer.BlockCopy(first, 0, ret, 0, first.Length);
+            Buffer.BlockCopy(second, 0, ret, first.Length, second.Length);
+            Buffer.BlockCopy(third, 0, ret, first.Length + second.Length,
+                             third.Length);
+            return ret;
+        }
+
+        public static byte[] Combine(params byte[][] arrays)
+        {
+            byte[] ret = new byte[arrays.Sum(x => x.Length)];
+            int offset = 0;
+            foreach (byte[] data in arrays)
+            {
+                Buffer.BlockCopy(data, 0, ret, offset, data.Length);
+                offset += data.Length;
+            }
+            return ret;
+        }
+
         private void button12_Click(object sender, EventArgs e)
         {
-            groupBox2.Location = new Point(12, 82);
-            groupBox3.Location = new Point(423, 82);
-            groupBox3.Enabled = false;
-            groupBox2.Enabled = true;
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+            TextSpeed.SelectedIndex = 1;
+            Frame.SelectedIndex = 0;
+            Sound.SelectedIndex = 1;
+            BattleScene.SelectedIndex = 0;
+            BattleStyle.SelectedIndex = 0;
+            BTNMode.SelectedIndex = 0;
         }
     }
 }

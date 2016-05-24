@@ -1,0 +1,8 @@
+C:\Users\Joexv\Downloads\Compressed\Hex-Helper-master\misc editor\bin\Release\AGenMiscEditor.exe.config
+C:\Users\Joexv\Downloads\Compressed\Hex-Helper-master\misc editor\bin\Release\AGenMiscEditor.exe
+C:\Users\Joexv\Downloads\Compressed\Hex-Helper-master\misc editor\bin\Release\AGenMiscEditor.pdb
+C:\Users\Joexv\Downloads\Compressed\Hex-Helper-master\misc editor\obj\Release\A_Gen_Misc_Edits.HexHelper.resources
+C:\Users\Joexv\Downloads\Compressed\Hex-Helper-master\misc editor\obj\Release\Hex_Helper.Properties.Resources.resources
+C:\Users\Joexv\Downloads\Compressed\Hex-Helper-master\misc editor\obj\Release\misc editor.csproj.GenerateResource.Cache
+C:\Users\Joexv\Downloads\Compressed\Hex-Helper-master\misc editor\obj\Release\AGenMiscEditor.exe
+C:\Users\Joexv\Downloads\Compressed\Hex-Helper-master\misc editor\obj\Release\AGenMiscEditor.pdb
