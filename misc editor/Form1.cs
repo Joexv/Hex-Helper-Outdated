@@ -1659,6 +1659,11 @@ namespace A_Gen_Misc_Edits
             BattleStyle.SelectedIndex = 0;
             BTNMode.SelectedIndex = 0;
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

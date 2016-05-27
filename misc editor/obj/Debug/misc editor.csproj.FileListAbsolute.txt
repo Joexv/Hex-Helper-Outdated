@@ -7,3 +7,6 @@ C:\Users\Joexv\Downloads\Compressed\Hex-Helper-master\misc editor\bin\Debug\AGen
 C:\Users\Joexv\Downloads\Compressed\Hex-Helper-master\misc editor\bin\Debug\AGenMiscEditor.pdb
 C:\Users\Joexv\Downloads\Compressed\Hex-Helper-master\misc editor\obj\Debug\AGenMiscEditor.exe
 C:\Users\Joexv\Downloads\Compressed\Hex-Helper-master\misc editor\obj\Debug\AGenMiscEditor.pdb
+C:\Users\joeol\Desktop\Hex-Helper\misc editor\bin\Debug\AGenMiscEditor.exe.config
+C:\Users\joeol\Desktop\Hex-Helper\misc editor\obj\Debug\AGenMiscEditor.exe
+C:\Users\joeol\Desktop\Hex-Helper\misc editor\obj\Debug\AGenMiscEditor.pdb
